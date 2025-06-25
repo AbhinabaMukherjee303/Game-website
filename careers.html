@@ -4,58 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - GameDev Studio</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Optional: Tailwind CSS configuration for CDN
+        // tailwind.config = { /* ... */ }
+    </script>
 </head>
-<body>
-    <header>
-        <h1>GameDev Studio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-gray-900 text-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold mb-4 md:mb-0">GameDev Studio</a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700" aria-label="Open menu">
+                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <nav id="main-nav" class="hidden md:flex space-x-2 md:space-x-4">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Home</a>
+                <a href="games.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Games</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">About</a>
+                <a href="careers.html" class="block px-3 py-2 rounded-md text-base font-medium bg-gray-700 text-white">Careers</a> <!-- Active page -->
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Contact</a>
+            </nav>
+        </div>
+        <!-- Mobile Navigation Menu (Initially hidden) -->
+        <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Home</a>
+            <a href="games.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Games</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">About</a>
+            <a href="careers.html" class="block px-3 py-2 rounded-md text-base font-medium bg-gray-700 text-white">Careers</a> <!-- Active page -->
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Contact</a>
+        </div>
     </header>
 
-    <main>
-        <section id="join-us">
-            <h2>Join Our Team</h2>
-            <p>We're always looking for talented and passionate individuals to help us create the next generation of games. If you're excited about game development and want to work in a creative and dynamic environment, check out our open positions below!</p>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- Join Us Section -->
+        <section id="join-us" class="text-center my-8 md:my-12 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Join Our Team</h2>
+            <p class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                We're always looking for talented and passionate individuals to help us create the next generation of games. If you're excited about game development and want to work in a creative, collaborative, and dynamic environment, check out our open positions below!
+            </p>
         </section>
 
-        <section id="open-positions">
-            <h3>Current Openings</h3>
-            <div class="job-listing">
-                <h4>Senior Gameplay Programmer</h4>
-                <p>Location: [City, State or Remote]</p>
-                <p>Description: We are seeking an experienced Gameplay Programmer to design and implement game mechanics and systems for our upcoming titles...</p>
-                <p><a href="mailto:careers@examplegamedevstudio.com?subject=Application for Senior Gameplay Programmer">Apply Now</a></p>
-            </div>
-            <div class="job-listing">
-                <h4>3D Environment Artist</h4>
-                <p>Location: [City, State or Remote]</p>
-                <p>Description: Join our art team to create stunning and immersive 3D environments for our games. Proficiency in [Software Tools] required...</p>
-                <p><a href="mailto:careers@examplegamedevstudio.com?subject=Application for 3D Environment Artist">Apply Now</a></p>
-            </div>
-            <div class="job-listing">
-                <h4>No current openings that match your profile?</h4>
-                <p>We are always interested in hearing from talented individuals. Feel free to send your resume and portfolio to <a href="mailto:careers@examplegamedevstudio.com?subject=General Application">careers@examplegamedevstudio.com</a>, and we'll keep you in mind for future opportunities.</p>
+        <!-- Open Positions Section -->
+        <section id="open-positions" class="my-8 md:my-12">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-gray-800 text-center">Current Openings</h3>
+
+            <div class="space-y-6">
+                <!-- Job Listing 1 -->
+                <div class="job-listing bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-1 sm:mb-0">Senior Gameplay Programmer</h4>
+                        <span class="text-sm text-gray-600 bg-gray-200 px-3 py-1 rounded-full">[City, State or Remote]</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        We are seeking an experienced Gameplay Programmer to design and implement game mechanics, player controls, AI systems, and other core gameplay features for our upcoming titles. You'll work closely with designers and artists to bring innovative concepts to life.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <p class="text-sm text-gray-500 mb-2 sm:mb-0">Full-time | Engineering</p>
+                        <a href="mailto:careers@examplegamedevstudio.com?subject=Application for Senior Gameplay Programmer" class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition duration-150 text-sm">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Job Listing 2 -->
+                <div class="job-listing bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-1 sm:mb-0">3D Environment Artist</h4>
+                        <span class="text-sm text-gray-600 bg-gray-200 px-3 py-1 rounded-full">[City, State or Remote]</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Join our art team to create stunning, immersive, and optimized 3D environments for our games. You will be responsible for modeling, texturing, and lighting game worlds. Proficiency in Maya/Blender, Substance Painter, and Unreal Engine/Unity required.
+                    </p>
+                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <p class="text-sm text-gray-500 mb-2 sm:mb-0">Full-time | Art & Design</p>
+                        <a href="mailto:careers@examplegamedevstudio.com?subject=Application for 3D Environment Artist" class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition duration-150 text-sm">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- No current openings / General Application -->
+                <div class="bg-white rounded-lg shadow-md p-6 mt-10 text-center">
+                    <h4 class="text-xl font-semibold text-gray-700 mb-2">Don't See a Fit?</h4>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        We are always interested in hearing from talented individuals passionate about game development. If you don't see a current opening that matches your profile, feel free to send your resume and portfolio to
+                        <a href="mailto:careers@examplegamedevstudio.com?subject=General Application" class="text-blue-500 hover:text-blue-600 underline">careers@examplegamedevstudio.com</a>.
+                        We'll keep you in mind for future opportunities!
+                    </p>
+                </div>
             </div>
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2023 GameDev Studio. All rights reserved.</p>
-        <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
-        </ul>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-8 mt-12">
+        <p class="mb-4">&copy; <span id="currentYear"></span> GameDev Studio. All rights reserved.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="hover:text-gray-400 transition duration-150">Facebook</a>
+            <a href="#" class="hover:text-gray-400 transition duration-150">Twitter</a>
+            <a href="#" class="hover:text-gray-400 transition duration-150">LinkedIn</a>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script> <!-- Keep existing script for now -->
 </body>
 </html>
