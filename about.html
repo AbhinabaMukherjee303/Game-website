@@ -4,62 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - GameDev Studio</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Optional: Tailwind CSS configuration for CDN
+        // tailwind.config = { /* ... */ }
+    </script>
 </head>
-<body>
-    <header>
-        <h1>GameDev Studio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-gray-900 text-white shadow-md">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold mb-4 md:mb-0">GameDev Studio</a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700" aria-label="Open menu">
+                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <nav id="main-nav" class="hidden md:flex space-x-2 md:space-x-4">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Home</a>
+                <a href="games.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Games</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium bg-gray-700 text-white">About</a> <!-- Active page -->
+                <a href="careers.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Careers</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Contact</a>
+            </nav>
+        </div>
+        <!-- Mobile Navigation Menu (Initially hidden) -->
+        <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Home</a>
+            <a href="games.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Games</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium bg-gray-700 text-white">About</a> <!-- Active page -->
+            <a href="careers.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Careers</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Contact</a>
+        </div>
     </header>
 
-    <main>
-        <section id="studio-mission">
-            <h2>Our Mission</h2>
-            <p>To create innovative and unforgettable gaming experiences that inspire and entertain players around the globe. We believe in the power of games to tell stories, connect people, and push the boundaries of interactive entertainment.</p>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- Page Title -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">About Our Studio</h2>
+            <p class="text-lg text-gray-600 mt-2">Learn more about our passion for gaming.</p>
+        </div>
+
+        <!-- Studio Mission Section -->
+        <section id="studio-mission" class="my-8 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">Our Mission</h3>
+            <p class="text-gray-700 leading-relaxed text-lg">
+                To create innovative and unforgettable gaming experiences that inspire and entertain players around the globe. We believe in the power of games to tell stories, connect people, and push the boundaries of interactive entertainment.
+            </p>
         </section>
 
-        <section id="studio-vision">
-            <h2>Our Vision</h2>
-            <p>To be a leading game development studio recognized for creativity, quality, and a commitment to our players and our team. We aim to foster a culture of collaboration and continuous improvement.</p>
+        <!-- Studio Vision Section -->
+        <section id="studio-vision" class="my-8 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">Our Vision</h3>
+            <p class="text-gray-700 leading-relaxed text-lg">
+                To be a leading game development studio recognized for creativity, quality, and a commitment to our players and our team. We aim to foster a culture of collaboration, innovation, and continuous improvement, striving to make a positive impact on the gaming world.
+            </p>
         </section>
 
-        <section id="team">
-            <h2>Meet the Team</h2>
-            <div class="team-member">
-                <h4>[Founder/CEO Name]</h4>
-                <p>Role: Founder & CEO</p>
-                <p>Short bio about the team member.</p>
+        <!-- Values Section (Optional Addition) -->
+        <section id="studio-values" class="my-8 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-800 text-center">Our Core Values</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+                <div class="p-4">
+                    <div class="text-blue-500 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-1 text-gray-700">Innovation</h4>
+                    <p class="text-gray-600">Constantly exploring new ideas and technologies.</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-green-500 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m0 6H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-1 text-gray-700">Quality</h4>
+                    <p class="text-gray-600">Delivering polished and engaging experiences.</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-purple-500 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-1 text-gray-700">Community</h4>
+                    <p class="text-gray-600">Fostering a positive and inclusive environment.</p>
+                </div>
             </div>
-            <div class="team-member">
-                <h4>[Lead Developer Name]</h4>
-                <p>Role: Lead Developer</p>
-                <p>Short bio about the team member.</p>
-            </div>
-            <div class="team-member">
-                <h4>[Lead Artist Name]</h4>
-                <p>Role: Lead Artist</p>
-                <p>Short bio about the team member.</p>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="my-12">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-gray-800 text-center">Meet the Team</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center text-gray-500">
+                        {/* Placeholder for team member photo */}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-1 text-gray-800">[Founder/CEO Name]</h4>
+                    <p class="text-blue-600 font-medium mb-2">Founder & CEO</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Short bio about the team member. Passionate about creating immersive worlds and leading a talented team towards a shared vision.</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-1 text-gray-800">[Lead Developer Name]</h4>
+                    <p class="text-blue-600 font-medium mb-2">Lead Developer</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Expert in game mechanics and system architecture. Drives the technical excellence of our projects.</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                    <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-300 flex items-center justify-center text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-1 text-gray-800">[Lead Artist Name]</h4>
+                    <p class="text-blue-600 font-medium mb-2">Lead Artist</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Brings our game worlds to life with stunning visuals and a unique artistic direction. Inspires the art team.</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 GameDev Studio. All rights reserved.</p>
-        <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
-        </ul>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-8 mt-12">
+        <p class="mb-4">&copy; <span id="currentYear"></span> GameDev Studio. All rights reserved.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="hover:text-gray-400 transition duration-150">Facebook</a>
+            <a href="#" class="hover:text-gray-400 transition duration-150">Twitter</a>
+            <a href="#" class="hover:text-gray-400 transition duration-150">LinkedIn</a>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script> <!-- Keep existing script for now -->
 </body>
 </html>
